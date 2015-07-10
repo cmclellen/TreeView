@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyABC.TreeView.Web", "CompanyABC.TreeView.Web\CompanyABC.TreeView.Web.csproj", "{7BD2DB5B-2ADA-4B41-AB5E-3C7717EE5741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyABC.TreeView.Web.Tests", "CompanyABC.TreeView.Web.Tests\CompanyABC.TreeView.Web.Tests.csproj", "{A2BA9664-A200-4D7E-B5CC-08C289ED4A68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BD2DB5B-2ADA-4B41-AB5E-3C7717EE5741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD2DB5B-2ADA-4B41-AB5E-3C7717EE5741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD2DB5B-2ADA-4B41-AB5E-3C7717EE5741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD2DB5B-2ADA-4B41-AB5E-3C7717EE5741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2BA9664-A200-4D7E-B5CC-08C289ED4A68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2BA9664-A200-4D7E-B5CC-08C289ED4A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2BA9664-A200-4D7E-B5CC-08C289ED4A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BA9664-A200-4D7E-B5CC-08C289ED4A68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
