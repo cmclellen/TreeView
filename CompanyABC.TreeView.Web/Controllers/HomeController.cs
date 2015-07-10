@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompanyABC.TreeView.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,9 +11,16 @@ namespace CompanyABC.TreeView.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string returnUrl)
+
+        public ActionResult Index(int? treeDepth)
         {
-            ViewBag.ReturnUrl = returnUrl;
+            return View(new TreeModel {
+                Depth = treeDepth.GetValueOrDefault(0)
+            });
+        }
+
+        public ActionResult About()
+        {
             return View();
         }
     }

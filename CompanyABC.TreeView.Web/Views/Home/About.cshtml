@@ -1,0 +1,11 @@
+﻿<div class="container">
+  <div class="jumbotron">
+    <h1>Tree View</h1>
+
+    <p>This ASP.NET MVC web application renders a tree structure to a depth specified by the input.</p> 
+    <p>
+        When the application is run (with the default configuration), you can access a tree of depth 2
+        by typing into the address bar the url <a href="@Url.Content("~/tree/2")">@string.Concat(Request.Url.GetLeftPart(UriPartial.Authority), Url.Content("~/tree/2"))</a>.
+    </p>
+  </div>  
+</div>

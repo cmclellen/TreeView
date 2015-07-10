@@ -15,8 +15,14 @@ namespace CompanyABC.TreeView.Web
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "",
+                defaults: new { controller = "Home", action = "About" }
+            );
+
+            routes.MapRoute(
+                name: "Tree",
+                url: "tree/{treeDepth}",
+                defaults: new { controller = "Home", action = "Index", treeDepth = UrlParameter.Optional }
             );
         }
     }
