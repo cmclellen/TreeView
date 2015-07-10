@@ -8,5 +8,7 @@ namespace CompanyABC.TreeView.Web.Models
     public class TreeModel
     {
         public int Depth { get; set; }
+
+        public IList<DAL.Domain.TreeNode> TreeData { get; set; }
     }
 }
