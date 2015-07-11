@@ -1,7 +1,9 @@
 ﻿angular.module('app.tree-view', ['ngRoute', 'ui.bootstrap'])
 
 angular.module('app.tree-view')
-    .config(function ($routeProvider) {
+    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+
+        $locationProvider.html5Mode(true);
 
         $routeProvider
             // route for the home page
@@ -23,4 +25,4 @@ angular.module('app.tree-view')
         //    templateUrl : 'pages/contact.html',
         //    controller  : 'contactController'
         //});
-    });
+    }]);

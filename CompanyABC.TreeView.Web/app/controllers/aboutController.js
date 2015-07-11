@@ -5,7 +5,7 @@
         angular.extend($scope, {
             uiState: {
                 name: "about Controller",
-                sampleTreeViewUrl: $window.myApp.constants.urlAuthority + '/#/tree/2',
+                sampleTreeViewUrl: $window.myApp.constants.urlAuthority + '/tree/2',
                 webProjStartActionImagePath: $window.myApp.constants.urlPrefix + 'docs/assets/WebProjStartAction.png'
             }
         });
