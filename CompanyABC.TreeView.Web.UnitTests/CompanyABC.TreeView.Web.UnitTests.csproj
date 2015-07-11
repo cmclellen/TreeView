@@ -86,6 +86,17 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="js\controllers\treeControllerTests.js" />
+    <Content Include="js\libs\boot.js" />
+    <Content Include="js\libs\console.js" />
+    <Content Include="js\libs\jasmine-html.js" />
+    <Content Include="js\libs\jasmine.css" />
+    <Content Include="js\libs\jasmine.js" />
+    <Content Include="js\libs\jasmine_favicon.png" />
+    <Content Include="js\_references.js" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

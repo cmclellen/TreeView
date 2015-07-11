@@ -5,7 +5,7 @@
         angular.extend($scope, {
             uiState: {
                 treeNodes: null,
-                depth: $routeParams.treeDepth
+                depth: parseInt($routeParams.treeDepth, 10)
             }
         })
         
