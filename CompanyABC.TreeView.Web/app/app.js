@@ -6,7 +6,6 @@ angular.module('app.tree-view')
         $locationProvider.html5Mode(true);
 
         $routeProvider
-            // route for the home page
             .when('/', {
                 templateUrl: '/app/views/about.html',
                 controller: 'aboutController'
@@ -15,14 +14,4 @@ angular.module('app.tree-view')
                 templateUrl: '/app/views/tree.html',
                 controller: 'treeController'
             });
-        //// route for the about page
-        //.when('/about', {
-        //    templateUrl : 'pages/about.html',
-        //    controller  : 'aboutController'
-        //})
-        //// route for the contact page
-        //.when('/contact', {
-        //    templateUrl : 'pages/contact.html',
-        //    controller  : 'contactController'
-        //});
     }]);
