@@ -14,4 +14,3 @@
 <ul ng-if="uiState.depth > 0">
     <li ng-repeat="data in uiState.treeNodes" ng-include="'treenode_renderer.html'" ng-init="data.t = ($parent.data.t || 0) + 1"></li>
 </ul>
-
