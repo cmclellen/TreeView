@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyABC.TreeView.DAL.Uni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyABC.Common.UnitTests", "CompanyABC.Common.UnitTests\CompanyABC.Common.UnitTests.csproj", "{C0BDDA0A-A447-48E2-8F4D-3F3A75614030}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyABC.TreeView.Web.UnitTests", "CompanyABC.TreeView.Web.UnitTests\CompanyABC.TreeView.Web.UnitTests.csproj", "{6918E378-AA87-4362-BF68-841A90A75732}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{C0BDDA0A-A447-48E2-8F4D-3F3A75614030}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0BDDA0A-A447-48E2-8F4D-3F3A75614030}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0BDDA0A-A447-48E2-8F4D-3F3A75614030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6918E378-AA87-4362-BF68-841A90A75732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6918E378-AA87-4362-BF68-841A90A75732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6918E378-AA87-4362-BF68-841A90A75732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6918E378-AA87-4362-BF68-841A90A75732}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
