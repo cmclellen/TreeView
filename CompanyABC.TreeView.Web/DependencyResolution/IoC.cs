@@ -20,10 +20,14 @@ namespace CompanyABC.TreeView.Web.DependencyResolution {
     using CompanyABC.TreeView.DAL.Repositories;
     using CompanyABC.TreeView.Web.Factories;
     using StructureMap;
+    using System.Web.Http;
+    using System.Web.Http.Dispatcher;
 	
     public static class IoC {
+
         public static IContainer Initialize() {
             var container = new Container(c => c.AddRegistry<DefaultRegistry>());
+            GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), new ServiceActivator(container));
             container.AssertConfigurationIsValid();
             return container;
         }

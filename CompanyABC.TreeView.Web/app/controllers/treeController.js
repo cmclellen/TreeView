@@ -1,5 +1,21 @@
 ﻿angular
     .module('app.tree-view')
-    .controller('treeController', function ($scope) {
-        $scope.name = "tree controller";
-    });
+    .controller('treeController', ['$scope', '$routeParams', 'treeNodeService', function ($scope, $routeParams, treeNodeService) {
+
+        angular.extend($scope, {
+            uiState: {
+                treeNodes: null,
+                depth: $routeParams.treeDepth
+            }
+        })
+        
+        function init() {
+            var uiState = $scope.uiState;
+            treeNodeService.getAll()
+                .then(function (response) {
+                    console.log('response', response);
+                    uiState.treeNodes = response;
+                });
+        }
+        init();
+    }]);

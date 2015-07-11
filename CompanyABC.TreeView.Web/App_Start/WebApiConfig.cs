@@ -1,7 +1,11 @@
-﻿using System;
+﻿using CompanyABC.TreeView.Web.DependencyResolution;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Dispatcher;
 
 namespace CompanyABC.TreeView.Web
 {
@@ -14,6 +18,16 @@ namespace CompanyABC.TreeView.Web
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            ConfigureJsonSerialization();            
+        }
+
+        private static void ConfigureJsonSerialization()
+        {
+            var formatters = GlobalConfiguration.Configuration.Formatters;
+            var jsonFormatter = formatters.JsonFormatter;
+            var settings = jsonFormatter.SerializerSettings;
+            settings.Formatting = Formatting.Indented;
+            settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }

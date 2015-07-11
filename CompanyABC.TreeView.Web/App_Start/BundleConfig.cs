@@ -19,7 +19,8 @@ namespace CompanyABC.TreeView.Web
 
             bundles.Add(new ScriptBundle("~/bundles/app")
                 .Include("~/app/app.js")
-                .IncludeDirectory("~/app/controllers", "*.js"));
+                .IncludeDirectory("~/app/controllers", "*.js")
+                .IncludeDirectory("~/app/services", "*.js"));
 
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include("~/Content/bootstrap.css")

@@ -13,29 +13,12 @@ namespace CompanyABC.TreeView.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(IRepositoryFactory repositoryFactory)
+        public HomeController()
         {
-            Guard.NotNull(() => repositoryFactory, repositoryFactory);
-            RepositoryFactory = repositoryFactory;
+            
         }
 
-        IRepositoryFactory RepositoryFactory { get; set; }
-
-        ITreeNodeRepository TreeRepository
-        {
-            get { return RepositoryFactory.GetRepository<ITreeNodeRepository>(); }
-        }
-
-        public ActionResult Index(int? treeDepth)
-        {
-            var treeData = TreeRepository.GetAll();
-            return View(new TreeModel {
-                Depth = treeDepth.GetValueOrDefault(0),
-                TreeData = treeData,
-            });
-        }
-
-        public ActionResult About()
+        public ActionResult Index()
         {
             return View();
         }

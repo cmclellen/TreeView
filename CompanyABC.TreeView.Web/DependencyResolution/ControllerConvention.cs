@@ -23,12 +23,13 @@ namespace CompanyABC.TreeView.Web.DependencyResolution {
     using StructureMap.Graph;
     using StructureMap.Pipeline;
     using StructureMap.TypeRules;
+    using System.Web.Http;
 
     public class ControllerConvention : IRegistrationConvention {
         #region Public Methods and Operators
 
         public void Process(Type type, Registry registry) {
-            if (type.CanBeCastTo<Controller>() && !type.IsAbstract) {
+            if ((type.CanBeCastTo<ApiController>() || type.CanBeCastTo<Controller>()) && !type.IsAbstract) {
                 registry.For(type).LifecycleIs(new UniquePerRequestLifecycle());
             }
         }

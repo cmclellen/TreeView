@@ -1,2 +1,10 @@
-﻿<div>HOME VIEW LOADED</div>
-<div>name: [<span ng-bind="name"></span>]</div>
+﻿<script type="text/ng-template" id="treenode_renderer.html">
+    {{data.displayText}} [Depth: {{data.t}}]
+    <ul ng-if="data.t < uiState.depth">
+        <li ng-repeat="data in data.treeNodes" ng-init="data.t = ($parent.data.t || 0) + 1" ng-include="'treenode_renderer.html'"></li>
+    </ul>
+</script>
+<ul ng-if="uiState.depth > 0">
+    <li ng-repeat="data in uiState.treeNodes" ng-include="'treenode_renderer.html'" ng-init="data.t = ($parent.data.t || 0) + 1"></li>
+</ul>
+
