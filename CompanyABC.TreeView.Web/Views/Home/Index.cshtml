@@ -1,3 +1,35 @@
-﻿<div class="container">
-    treeDepth: @Model.Depth
-</div>
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html ng-app="app.tree-view">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Tree View</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <center><h1>Tree View</h1></center>
+        </div>
+        <div ng-view></div>
+    </div>
+
+    <script type="text/javascript">
+        var myApp = {
+            constants: {
+                urlPrefix: '@Url.Content("~")',
+                urlAuthority: '@Request.Url.GetLeftPart(UriPartial.Authority)'
+            }
+        };
+
+        console.log('treeViewApp', myApp);
+    </script>
+    
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
+</body>
+</html>

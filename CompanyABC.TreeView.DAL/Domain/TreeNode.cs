@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace CompanyABC.TreeView.DAL.Domain
 {
+    [Serializable]
     public class TreeNode : IEquatable<TreeNode>
     {
         IList<TreeNode> _treeNodes;

@@ -55,6 +55,10 @@
     <Compile Include="Repositories\TreeNodeRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CompanyABC.Common\CompanyABC.Common.csproj">
+      <Project>{46155ea3-2213-465b-87ac-4604697bb01a}</Project>
+      <Name>CompanyABC.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CompanyABC.TreeView.DAL\CompanyABC.TreeView.DAL.csproj">
       <Project>{e9bc0877-0d37-4a4f-a34a-037d2c59670a}</Project>
       <Name>CompanyABC.TreeView.DAL</Name>
