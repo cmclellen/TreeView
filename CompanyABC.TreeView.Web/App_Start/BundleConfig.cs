@@ -18,6 +18,7 @@ namespace CompanyABC.TreeView.Web
                 .Include("~/Scripts/angular-ui/ui-bootstrap-tpls.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app")
+                .IncludeDirectory("~/dist/partials", "*.js", true)
                 .Include("~/app/app.js")
                 .IncludeDirectory("~/app/controllers", "*.js")
                 .IncludeDirectory("~/app/services", "*.js"));
