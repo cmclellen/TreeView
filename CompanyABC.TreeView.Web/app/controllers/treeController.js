@@ -7,7 +7,7 @@
                 treeNodes: null,
                 depth: parseInt($routeParams.treeDepth, 10)
             }
-        })
+        });
         
         function init() {
             var uiState = $scope.uiState;

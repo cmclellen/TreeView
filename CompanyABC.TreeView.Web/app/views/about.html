@@ -1,26 +1,29 @@
-﻿
-    <div class="jumbotron">
-        <ul class="list-unstyled">
-            <li>
-        <h3>Overview</h3>
+﻿<div class="jumbotron">
+    <ul class="list-unstyled">
+        <li>
+            <h3>Overview</h3>
             <p>This ASP.NET MVC web application renders a tree structure to a depth specified by either the query string or the provided numeric input.</p>
             <p>
                 I've used Visual Studio 2012 along with ASP.NET MVC5 and AngularJs 1.4 (for it's ease of keeping concerns separate by providing an MVVM type pattern) to develop this application. 
             </p>
-                </li>
-            <li>
-        <h3>Start playing</h3>
+        </li>
+        <li>
+            <h3>Start playing</h3>
             <p>
-            When the application is run (with the default configuration), you can access a tree of depth 2
-            by either typing into the internet browser address bar or clicking on the url <a href="{{uiState.sampleTreeViewUrl}}" ng-bind="uiState.sampleTreeViewUrl"></a>.
+                The application could be deployed to IIS to be run, but I haven't written any deployment scripts to automate this, so to keep things simple, 
+                    you will need to open up the solution file "CompanyABC.TreeView.sln" in Visual Studio 2012, and ensure the "CompanyABC.TreeView.Web" is set 
+                    as the StartUp project. Also ensure that the Start action on this project is set to "Specific Page" in project properties.
             </p>
-                </li>
-            <li>
-        <h3>Troubleshooting</h3>
+            <p>
+                When the application is running, you can access a tree of depth 2 by either typing into the internet browser address bar or clicking on the url <a href="{{uiState.sampleTreeViewUrl}}" ng-bind="uiState.sampleTreeViewUrl"></a>.
+            </p>
+        </li>
+        <li>
+            <h3>Troubleshooting</h3>
             <ul>
                 <li>
                     <p>
-                    Please ensure the "Start Action" for the web project (CompanyABC.TreeView.Web) has been set to "Specific Page" with a blank value.
+                        Please ensure the "Start Action" for the web project (CompanyABC.TreeView.Web) has been set to "Specific Page" with a blank value.
                     </p>
                     <img src="{{uiState.webProjStartActionImagePath}}" />
                 </li>
@@ -28,7 +31,7 @@
                     <p>To ensure the JS tests run, you'll have to install Chutzpah for Visual Studio.</p>
                 </li>
             </ul>
-                </li>
-        </ul>
-  </div>  
+        </li>
+    </ul>
+</div>
 
