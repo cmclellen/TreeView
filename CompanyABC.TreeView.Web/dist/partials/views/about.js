@@ -11,7 +11,7 @@ module.run(['$templateCache', function($templateCache) {
     '        <li>\n' +
     '            <h3>Overview</h3>\n' +
     '            <p>This ASP.NET MVC web application renders a tree structure to a depth specified by either the query string or the provided numeric input.</p>\n' +
-    '            <p>I\'ve used Visual Studio 2012 along with ASP.NET MVC5 and AngularJs 1.4 (for it\'s ease of keeping concerns separate by providing an MVVM type pattern) to develop this application.</p>\n' +
+    '            <p>I\'ve used Visual Studio 2012 along with ASP.NET MVC5 and AngularJs 1.4 (for it\'s MVVM like feel enabling easier separation of concerns) to develop this application.</p>\n' +
     '        </li>\n' +
     '        <li>\n' +
     '            <h3>Prerequisites to run the application</h3>\n' +

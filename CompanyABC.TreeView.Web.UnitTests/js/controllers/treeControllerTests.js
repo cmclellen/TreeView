@@ -2,7 +2,7 @@
 /// <reference path="../../../companyabc.treeview.web/dist/partials/views/tree.js" />
 /// <reference path="../../../companyabc.treeview.web/app/controllers/treecontroller.js" />
 
-describe("treeController", function () {
+describe("tree controller", function () {
 
     var $rootScope,
         $controller,
@@ -76,96 +76,39 @@ describe("treeController", function () {
             }
             ];
             expect(scope.uiState.treeNodes).toEqual(expected);
+            expect(scope.isLoading()).toBeFalsy();
         });
 
-    });
-
-    describe('depth specified on query-string', function () {
-
-        var viewHtml,
-            formElement,
-            controller;
-
-        beforeEach(inject(function ($templateCache) {            
-            viewHtml = $templateCache.get('/partials/views/tree.html');
-            formElement = angular.element(viewHtml);                       
-        }));
-
-        it('should only show depth of 2 when query-string param value of 2 specified', function () {
+        it('should have state isLoading while retrieving nodes', function () {
 
             // ARRANGE
-            $routeParams.treeDepth = 2;
-            controller = $controller('treeController', {
-                '$scope': scope,
-                '$routeParams': $routeParams
-            });
-            var element = $compile(formElement)(scope);
-            deferred.resolve(treeNodes);
-
-            // ACT            
-            $rootScope.$digest();
             
-            // ASSERT
-            var nodes = formElement[0].querySelectorAll('li.tree-node > span');
-            expect(nodes.length).toBe(7);
+            // ACT            
             
-            var nodeText = Object.keys(nodes).map(function (item) {
-                var val = nodes[item];
-                return val.innerText?val.innerText.trim():undefined;
-            }).filter(function (item) {
-                return item !== undefined;
-            });
-            expect(nodeText).toEqual([
-                'a [Depth: 1]', 'aa [Depth: 2]', 'ab [Depth: 2]',
-                'b [Depth: 1]', 'ba [Depth: 2]', 'bb [Depth: 2]', 'bc [Depth: 2]']);
+            // ASSERT            
+            expect(scope.isLoading()).toBeTruthy();
         });
 
-        it('should show warning when query-string param value of 0 specified', function () {
+        it('should have state canShowTree true if current depth greater than 0', function () {
 
             // ARRANGE
-            $routeParams.treeDepth = 0;
-            controller = $controller('treeController', {
-                '$scope': scope,
-                '$routeParams': $routeParams
-            });
-            var element = $compile(formElement)(scope);
-            deferred.resolve(treeNodes);
+            scope.uiState.depth = 5;
 
             // ACT            
-            $rootScope.$digest();
-
-            // ASSERT
-            var warningElement = formElement[0].querySelectorAll('div.alert')[0];
-            expect(warningElement.innerText).toBe("No tree will display if the depth is 0");
+            
+            // ASSERT            
+            expect(scope.canShowTree()).toBeTruthy();
         });
 
-        it('should show all nodes when when query-string param value greater than tree maxdepth', function () {
+        it('should have state canShowTree false if current depth equals 0', function () {
 
             // ARRANGE
-            $routeParams.treeDepth = 10;
-            controller = $controller('treeController', {
-                '$scope': scope,
-                '$routeParams': $routeParams
-            });
-            var element = $compile(formElement)(scope);
-            deferred.resolve(treeNodes);
+            scope.uiState.depth = 0;
 
             // ACT            
-            $rootScope.$digest();
 
-            // ASSERT
-            var nodes = formElement[0].querySelectorAll('li.tree-node > span');
-            expect(nodes.length).toBe(11);
-
-            var nodeText = Object.keys(nodes).map(function (item) {
-                var val = nodes[item];
-                return val.innerText ? val.innerText.trim() : undefined;
-            }).filter(function (item) {
-                return item !== undefined;
-            });
-            expect(nodeText).toEqual([
-                'a [Depth: 1]', 'aa [Depth: 2]', 'aaa [Depth: 3]', 'ab [Depth: 2]', 'aba [Depth: 3]',
-                'b [Depth: 1]', 'ba [Depth: 2]', 'bb [Depth: 2]', 'bba [Depth: 3]', 'bbaa [Depth: 4]', 'bc [Depth: 2]']);
+            // ASSERT            
+            expect(scope.canShowTree()).toBeFalsy();
         });
 
     });

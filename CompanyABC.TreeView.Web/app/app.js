@@ -10,7 +10,7 @@ angular.module('app.tree-view')
                 templateUrl: '/partials/views/about.html',
                 controller: 'aboutController'
             })
-            .when('/tree/:treeDepth', {
+            .when('/tree/:treeDepth?', {
                 templateUrl: '/partials/views/tree.html',
                 controller: 'treeController'
             });

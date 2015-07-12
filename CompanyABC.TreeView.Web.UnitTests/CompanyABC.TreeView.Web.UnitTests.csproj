@@ -95,6 +95,7 @@
     <Content Include="js\libs\jasmine.css" />
     <Content Include="js\libs\jasmine.js" />
     <Content Include="js\libs\jasmine_favicon.png" />
+    <Content Include="js\views\treeTests.js" />
     <Content Include="js\_references.js" />
   </ItemGroup>
   <Choose>
