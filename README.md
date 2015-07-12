@@ -1,7 +1,5 @@
 # TreeView 
-
-<div class="jumbotron">
-    <ul class="list-unstyled">
+    <ul>
         <li>
             <h3>Overview</h3>
             <p>This ASP.NET MVC web application renders a tree structure to a depth specified by either the query string or the provided numeric input.</p>
@@ -55,8 +53,7 @@ as "stylecop" type tasks such as eslint. VS 2015 actually natively caters for th
                 <li>
                     <p>
                         Please ensure the "Start Action" for the web project (CompanyABC.TreeView.Web) has been set to "Specific Page" with a blank value.
-                    </p>
-                    <img src="{{uiState.webProjStartActionImagePath}}" />
+                    </p>                    
                 </li>
                 <li>
                     <p>To ensure the JS tests run, you'll have to install Chutzpah for Visual Studio.</p>
