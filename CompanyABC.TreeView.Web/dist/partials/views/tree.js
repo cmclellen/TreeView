@@ -6,10 +6,12 @@ try {
 }
 module.run(['$templateCache', function($templateCache) {
   $templateCache.put('/partials/views/tree.html',
-    '<script type="text/ng-template" id="treenode_renderer.html">\n' +
+    '<div>\n' +
+    '    \n' +
+    '    <script type="text/ng-template" id="treenode_renderer.html">\n' +
     '    {{data.displayText}} [Depth: {{data.t}}]\n' +
     '    <ul ng-if="data.t < uiState.depth">\n' +
-    '        <li ng-repeat="data in data.treeNodes" ng-init="data.t = ($parent.data.t || 0) + 1" ng-include="\'treenode_renderer.html\'"></li>\n' +
+    '        <li class="tree-node" ng-repeat="data in data.treeNodes" ng-init="data.t = ($parent.data.t || 0) + 1" ng-include="\'treenode_renderer.html\'"></li>\n' +
     '    </ul>\n' +
     '</script>\n' +
     '\n' +
@@ -21,11 +23,12 @@ module.run(['$templateCache', function($templateCache) {
     '<div ng-if="uiState.treeNodes === null">\n' +
     '    Loading...\n' +
     '</div>\n' +
-    '<div ng-if="uiState.treeNodes !== null">\n' +
+    '<div class="tree" ng-if="uiState.treeNodes !== null">\n' +
     '    <div ng-if="uiState.depth === 0" class="alert alert-warning">No tree will display if the depth is 0</div>\n' +
     '    <ul ng-if="uiState.depth > 0">\n' +
-    '        <li ng-repeat="data in uiState.treeNodes" ng-include="\'treenode_renderer.html\'" ng-init="data.t = ($parent.data.t || 0) + 1"></li>\n' +
+    '        <li class="tree-node" ng-repeat="data in uiState.treeNodes" ng-include="\'treenode_renderer.html\'" ng-init="data.t = ($parent.data.t || 0) + 1"></li>\n' +
     '    </ul>\n' +
-    '</div>');
+    '</div>\n' +
+    '    </div>');
 }]);
 })();

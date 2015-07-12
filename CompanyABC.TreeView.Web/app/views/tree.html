@@ -1,7 +1,9 @@
-﻿<script type="text/ng-template" id="treenode_renderer.html">
+﻿<div>
+    
+    <script type="text/ng-template" id="treenode_renderer.html">
     {{data.displayText}} [Depth: {{data.t}}]
     <ul ng-if="data.t < uiState.depth">
-        <li ng-repeat="data in data.treeNodes" ng-init="data.t = ($parent.data.t || 0) + 1" ng-include="'treenode_renderer.html'"></li>
+        <li class="tree-node" ng-repeat="data in data.treeNodes" ng-init="data.t = ($parent.data.t || 0) + 1" ng-include="'treenode_renderer.html'"></li>
     </ul>
 </script>
 
@@ -13,9 +15,10 @@
 <div ng-if="uiState.treeNodes === null">
     Loading...
 </div>
-<div ng-if="uiState.treeNodes !== null">
+<div class="tree" ng-if="uiState.treeNodes !== null">
     <div ng-if="uiState.depth === 0" class="alert alert-warning">No tree will display if the depth is 0</div>
     <ul ng-if="uiState.depth > 0">
-        <li ng-repeat="data in uiState.treeNodes" ng-include="'treenode_renderer.html'" ng-init="data.t = ($parent.data.t || 0) + 1"></li>
+        <li class="tree-node" ng-repeat="data in uiState.treeNodes" ng-include="'treenode_renderer.html'" ng-init="data.t = ($parent.data.t || 0) + 1"></li>
     </ul>
 </div>
+    </div>

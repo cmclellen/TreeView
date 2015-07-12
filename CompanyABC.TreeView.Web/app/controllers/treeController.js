@@ -12,8 +12,7 @@
         function init() {
             var uiState = $scope.uiState;
             treeNodeService.getAll()
-                .then(function (response) {
-                    console.log('response', response);
+                .then(function (response) {                    
                     uiState.treeNodes = response;
                 });
         }
